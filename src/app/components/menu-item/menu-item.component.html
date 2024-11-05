@@ -1,15 +1,29 @@
 <div (click)="navigateToOrder()" class="w-[120px] md:w-[250px]">
   <div class="flex justify-center">
-    <img class="w-[220px] aspect-square rounded-md" [src]="imageSrc" />
+    <img
+      class="w-[220px] aspect-square rounded-md"
+      [src]="imageSrc"
+      loading="lazy"
+    />
   </div>
   <div class="flex justify-center md:text-xl font-bold truncate">
     {{ itemName }}
   </div>
   @if(orderPage){
-  <div class="flex justify-center">
-    <button (click)="addToCart()" class="border-2 p-1 rounded-md border-black">
+  <div class="flex justify-center gap-4">
+    <button
+      (click)="addToCart($event)"
+      class="border-2 p-1 rounded-md border-black w-3/4"
+    >
       Add to Cart
     </button>
+    <input
+      class="w-1/4 border-2 p-1 flex justify-center rounded-md border-black"
+      [defaultValue]="1"
+      [(ngModel)]="itemQuantity"
+      type="number"
+      min="1"
+    />
   </div>
   }
 </div>
