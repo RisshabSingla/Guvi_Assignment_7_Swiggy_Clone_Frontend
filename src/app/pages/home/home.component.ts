@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { dummyFoodItems } from '../../dummyItemsList';
+import { dummyFoodItems } from '../../dummyFoodList';
 import { MenuItemComponent } from '../../components/menu-item/menu-item.component';
+import { dummyItems } from '../../dummyItemsList';
 
 @Component({
   selector: 'app-home',
@@ -11,4 +12,5 @@ import { MenuItemComponent } from '../../components/menu-item/menu-item.componen
 })
 export class HomeComponent {
     foodItems = dummyFoodItems;
+    itemList = dummyItems;
 }
