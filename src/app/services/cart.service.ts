@@ -26,7 +26,25 @@ export class CartService {
     }
     this.cartItems.next(currentItems);
   }
+  removeFromCart(id: string) {
+    const currentItems = this.cartItems.value.filter(item => item.id !== id);
+    this.cartItems.next(currentItems);
+  }
 
+  decreaseQuantity(id: string) {
+    const currentItems = this.cartItems.value;
+    const itemIndex = currentItems.findIndex(item => item.id === id);
+
+    if (itemIndex > -1) {
+      if (currentItems[itemIndex].quantity > 1) {
+        currentItems[itemIndex].quantity--;
+      } else {
+        currentItems.splice(itemIndex, 1);
+      }
+      this.cartItems.next(currentItems);
+    }
+  }
+  
   getCartItems() {
     return this.cartItems.value;
   }
