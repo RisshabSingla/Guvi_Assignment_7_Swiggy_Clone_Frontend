@@ -4,7 +4,10 @@
       <div class="text-xl font-bold my-2">Cities with Food Delivery</div>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         @for(city of cityList ; track city.id){
-        <div class="border-2 rounded-md p-2 flex justify-center">
+        <div
+          (click)="navigateToOrder()"
+          class="border-2 rounded-md p-2 flex justify-center hover:border-black"
+        >
           Order food Online in {{ city.name }}
         </div>
         }
@@ -17,7 +20,10 @@
       <div class="text-xl font-bold my-2">Cities with Grocery Delivery</div>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         @for(city of cityList ; track city.id){
-        <div class="border-2 rounded-md p-2 flex justify-center">
+        <div
+          (click)="navigateToOrder()"
+          class="border-2 rounded-md p-2 flex justify-center hover:border-black"
+        >
           Order Grocery Delivery in {{ city.name }}
         </div>
         }

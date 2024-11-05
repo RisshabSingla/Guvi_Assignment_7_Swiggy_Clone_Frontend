@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-restaurant-card',
@@ -14,4 +15,10 @@ export class RestaurantCardComponent {
   @Input({required:true}) cuisines!: string[];
   @Input({required:true}) rating!: number;
   @Input({required:true}) price!: string;
+
+  constructor(private router: Router) {}
+
+  navigateToOrder(){
+      this.router.navigate(['/order']);
+    }
 }
