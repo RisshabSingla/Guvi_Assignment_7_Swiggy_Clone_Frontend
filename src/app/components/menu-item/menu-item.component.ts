@@ -11,10 +11,18 @@ import { Router } from '@angular/router';
 export class MenuItemComponent {
     @Input({required:true}) imageSrc!: string;
     @Input({required:true}) itemName!: string;
-
+    @Input({required: true}) orderPage!: boolean;
     constructor(private router: Router) {}
 
     navigateToOrder(){
-      this.router.navigate(['/order']);
+
+      if(!this.orderPage){
+        console.log("ello")
+        this.router.navigate(['/order']);
+      }
+    }
+
+    addToCart(){
+      console.log("added" + this.itemName)
     }
 }

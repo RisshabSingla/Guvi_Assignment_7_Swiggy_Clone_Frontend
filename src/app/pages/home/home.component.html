@@ -6,6 +6,7 @@
       <app-menu-item
         [imageSrc]="foodItem.imageSrc"
         [itemName]="foodItem.name"
+        [orderPage]="false"
       />
       }
     </div>
@@ -15,7 +16,11 @@
     <div class="text-2xl m-4">Shop groceries on Instamart</div>
     <div class="flex gap-4 overflow-auto mx-4">
       @for(item of itemList; track item.id){
-      <app-menu-item [imageSrc]="item.imageSrc" [itemName]="item.name" />
+      <app-menu-item
+        [imageSrc]="item.imageSrc"
+        [itemName]="item.name"
+        [orderPage]="false"
+      />
       }
     </div>
   </div>

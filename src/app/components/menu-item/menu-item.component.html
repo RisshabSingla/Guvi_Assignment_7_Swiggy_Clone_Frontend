@@ -1,8 +1,15 @@
-<div (click)="navigateToOrder()" class="w-[120px] md:w-[200px]">
-  <div>
-    <img class="w-[300px]" [src]="imageSrc" />
+<div (click)="navigateToOrder()" class="w-[120px] md:w-[250px]">
+  <div class="flex justify-center">
+    <img class="w-[220px] aspect-square rounded-md" [src]="imageSrc" />
   </div>
   <div class="flex justify-center md:text-xl font-bold truncate">
     {{ itemName }}
   </div>
+  @if(orderPage){
+  <div class="flex justify-center">
+    <button (click)="addToCart()" class="border-2 p-1 rounded-md border-black">
+      Add to Cart
+    </button>
+  </div>
+  }
 </div>
