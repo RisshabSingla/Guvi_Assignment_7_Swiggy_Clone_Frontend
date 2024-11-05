@@ -1,27 +1,24 @@
-<header class="bg-white shadow-md">
+<header class="bg-orange-600 shadow-md">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center">
         <a routerLink="/home" class="text-xl font-bold flex items-center">
           <img
-            src="assets/swiggy-icon.png"
+            src="https://res.cloudinary.com/dutdah0l9/image/upload/v1720058694/Swiggy_logo_bml6he.png"
             alt="Swiggy Logo"
-            class="h-8 w-8 mr-2"
+            class="h-8 w-32 mr-2"
           />
-          Swiggy
         </a>
       </div>
       <nav class="flex space-x-4">
-        <a routerLink="/cart" class="text-gray-700 hover:text-orange-500"
-          >Cart</a
-        >
-        <a routerLink="/favorites" class="text-gray-700 hover:text-orange-500"
+        <a routerLink="/cart" class="text-white font-medium text-lg">Cart</a>
+        <a routerLink="/favorites" class="text-white font-medium text-lg"
           >Favourites</a
         >
         <a
           *ngIf="!isLoggedIn"
           routerLink="/login"
-          class="text-gray-700 hover:text-orange-500"
+          class="text-white font-medium text-lg"
           >Login</a
         >
         <div *ngIf="isLoggedIn" class="flex items-center">
@@ -32,7 +29,7 @@
           />
           <button
             (click)="logout()"
-            class="ml-2 text-gray-700 hover:text-orange-500"
+            class="ml-2 text-white font-medium text-lg"
           >
             Logout
           </button>
