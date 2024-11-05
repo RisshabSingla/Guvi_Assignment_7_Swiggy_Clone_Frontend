@@ -1,1 +1,13 @@
-<p>home works!</p>
+<div>
+  <div class="mt-4">
+    <div class="text-xl mx-4">Order our best food options</div>
+    <div class="flex gap-4 overflow-auto mx-4">
+      @for(foodItem of foodItems; track foodItem.id){
+      <app-menu-item
+        [imageSrc]="foodItem.imageSrc"
+        [itemName]="foodItem.name"
+      />
+      }
+    </div>
+  </div>
+</div>

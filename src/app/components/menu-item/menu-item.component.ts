@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-menu-item',
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './menu-item.component.css'
 })
 export class MenuItemComponent {
-
+    @Input({required:true}) imageSrc!: string;
+    @Input({required:true}) itemName!: string;
 }

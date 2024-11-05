@@ -1,0 +1,22 @@
+export const dummyFoodItems = [
+    { "id": 1, "name": "North Indian", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/North%20Indian.png" },
+    { "id": 2, "name": "Pizza", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Pizza.png" },
+    { "id": 3, "name": "Burger", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Burger.png" },
+    { "id": 4, "name": "Biryani", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Biryani.png" },
+    { "id": 5, "name": "Chinese", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Chinese.png" },
+    { "id": 6, "name": "Rolls", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Rolls.png" },
+    { "id": 7, "name": "Chole Bhature", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Chole%20Bhature.png" },
+    { "id": 8, "name": "Dosa", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Dosa.png" },
+    { "id": 9, "name": "Paratha", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Paratha.png" },
+    { "id": 10, "name": "Pasta", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Pasta.png" },
+    { "id": 11, "name": "Cake", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Cake.png" },
+    { "id": 12, "name": "Noodles", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Noodles.png" },
+    { "id": 13, "name": "Pav Bhaji", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Pav%20Bhaji.png" },
+    { "id": 14, "name": "South Indian", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/South%20Indian.png" },
+    { "id": 15, "name": "Salad", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Salad.png" },
+    { "id": 16, "name": "Pastry", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Pastry.png" },
+    { "id": 17, "name": "Pure Veg", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Pure%20Veg.png" },
+    { "id": 18, "name": "Shake", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Shake.png" },
+    { "id": 19, "name": "Ice Cream", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Ice%20Cream.png" },
+    { "id": 20, "name": "Idli", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Idli.png" }
+]
