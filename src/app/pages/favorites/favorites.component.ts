@@ -38,7 +38,8 @@ export class FavoritesComponent implements OnInit {
       foodItemName: item.foodItemName,
       imageSource: item.imageSource,
       quantity: 1,
-      price: item.price
+      price: item.price,
+      restaurantID: item.restaurantID
     };
 
     this.cartService.addToCart(cartItem); 

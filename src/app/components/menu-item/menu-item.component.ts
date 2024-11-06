@@ -19,6 +19,7 @@ export class MenuItemComponent implements OnInit {
     @Input({required: true}) orderPage!: boolean;
     @Input({required: true}) id!: string;
     @Input({required: true}) price!: number;
+    @Input({required:true }) restaurantID!: string
 
     itemQuantity: number = 1;
     isFavorite: boolean = false;
@@ -47,7 +48,8 @@ export class MenuItemComponent implements OnInit {
           foodItemName: this.itemName,
           imageSource: this.imageSrc,
           quantity: this.itemQuantity,
-          price: this.price
+          price: this.price,
+          restaurantID: this.restaurantID
         };
         
         this.cartService.addToCart(cartItem);
@@ -61,7 +63,8 @@ export class MenuItemComponent implements OnInit {
           id: this.id,
           foodItemName: this.itemName,
           imageSource: this.imageSrc,
-          price: this.price
+          price: this.price,
+          restaurantID: this.restaurantID,
         };
 
         this.favoritesService.toggleFavorite(favoriteItem);

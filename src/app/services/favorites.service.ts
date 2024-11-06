@@ -6,6 +6,7 @@ export interface FavoriteItem {
   foodItemName: string;
   imageSource: string;
   price: number;
+  restaurantID: string;
 }
 
 @Injectable({

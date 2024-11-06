@@ -7,8 +7,8 @@ export interface CartItem {
   imageSource: string;
   quantity: number;
   price: number;
+  restaurantID: string;
 }
-
 @Injectable({
   providedIn: 'root'
 })
@@ -18,14 +18,20 @@ export class CartService {
 
   addToCart(item: CartItem) {
     const currentItems = this.cartItems.value;
-    const itemIndex = currentItems.findIndex(cartItem => cartItem.id === item.id);
 
-    if (itemIndex > -1) {
-      currentItems[itemIndex].quantity += item.quantity;
+    if (currentItems.length === 0 || currentItems[0].restaurantID === item.restaurantID) {
+      const itemIndex = currentItems.findIndex(cartItem => cartItem.id === item.id);
+
+      if (itemIndex > -1) {
+        currentItems[itemIndex].quantity += item.quantity;
+      } else {
+        currentItems.push(item);
+      }
+      this.cartItems.next(currentItems);
     } else {
-      currentItems.push(item);
+      
+      alert('You can only add items from one restaurant at a time. ');
     }
-    this.cartItems.next(currentItems);
   }
 
   removeFromCart(id: string) {
