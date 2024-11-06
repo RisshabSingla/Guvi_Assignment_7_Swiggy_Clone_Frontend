@@ -3,6 +3,7 @@
     <img
       class="w-[220px] aspect-square rounded-md"
       [src]="imageSrc"
+      (error)="setDefaultImage($event)"
       loading="lazy"
     />
   </div>

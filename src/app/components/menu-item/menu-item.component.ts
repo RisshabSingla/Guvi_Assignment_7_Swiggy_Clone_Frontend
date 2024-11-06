@@ -23,7 +23,8 @@ export class MenuItemComponent implements OnInit {
 
     itemQuantity: number = 1;
     isFavorite: boolean = false;
-
+    defaultImageSrc = "/assets/foodImagePlaceholder.png";
+    
     constructor(
       private router: Router, 
       private cartService: CartService, 
@@ -70,4 +71,9 @@ export class MenuItemComponent implements OnInit {
         this.favoritesService.toggleFavorite(favoriteItem);
         this.isFavorite = !this.isFavorite; 
     }
+
+  setDefaultImage(event: Event) {
+    const target = event.target as HTMLImageElement;
+    target.src = this.defaultImageSrc; 
+  }
 }
