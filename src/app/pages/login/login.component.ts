@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -17,24 +17,43 @@ export class LoginComponent {
   password: string = '';
   error: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private authService: AuthService) {}
 
   toggleForm() {
     this.isLogin = !this.isLogin;
+    this.error = ''; 
   }
 
   onLoginSubmit() {
-    if (this.email === 'test@example.com' && this.password === 'password') {
-      this.router.navigate(['/order']);
-    } else {
-      this.error = 'Invalid email or password';
-    }
+    this.authService.login(this.email, this.password).subscribe(
+      (response) => {
+        if (response.success) {
+          this.error = '';  
+        } else {
+          this.error = response.message; 
+        }
+      },
+      (error) => {
+        this.error = 'An error occurred. Please try again.';
+      }
+    );
   }
 
   onRegisterSubmit() {
     if (this.email && this.username && this.password) {
-      console.log('User registered:', { email: this.email, username: this.username, password: this.password });
-      this.router.navigate(['/order']);
+      this.authService.register(this.email, this.username, this.password).subscribe(
+        (response) => {
+          if (response.success) {
+            this.error = '';
+            this.toggleForm();
+          } else {
+            this.error = response.message;
+          }
+        },
+        (error) => {
+          this.error = 'An error occurred during registration.';
+        }
+      );
     } else {
       this.error = 'All fields are required!';
     }
