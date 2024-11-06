@@ -65,6 +65,6 @@ export class MenuItemComponent implements OnInit {
         };
 
         this.favoritesService.toggleFavorite(favoriteItem);
-        this.isFavorite = !this.isFavorite; // Toggle favorite status
+        this.isFavorite = !this.isFavorite; 
     }
 }

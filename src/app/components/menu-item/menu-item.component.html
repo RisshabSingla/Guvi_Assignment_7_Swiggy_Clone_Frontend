@@ -33,5 +33,19 @@
       min="1"
     />
   </div>
+  } @if(orderPage){
+  <div class="w-full mt-2">
+    <button
+      (click)="toggleFavorite($event)"
+      class="p-2 rounded border border-orange-500 text-black transition duration-300 w-full 
+         {{
+        isFavorite
+          ? 'bg-orange-500 hover:bg-orange-400'
+          : 'bg-transparent hover:bg-orange-100'
+      }}"
+    >
+      {{ isFavorite ? "Remove from Favorites" : "Add to Favorites" }}
+    </button>
+  </div>
   }
 </div>
