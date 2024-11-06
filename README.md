@@ -45,39 +45,41 @@ BehaviorSubject from RxJS (for managing dynamic messages)
 
 ## Folder Structure
 
+```plaintext
 .
-├── README.md # Project documentation
-├── angular.json # Angular configuration file
-├── package-lock.json # Automatically generated package-lock file for npm
-├── package.json # Project metadata and dependencies
+├── README.md                       # Project documentation
+├── angular.json                    # Angular configuration file
+├── package-lock.json               # Automatically generated package-lock file for npm
+├── package.json                    # Project metadata and dependencies
 ├── public
-│ └── favicon.ico # Application icon
+│   └── favicon.ico                 # Application icon
 ├── src
-│ ├── app
-│ │ ├── components # Reusable UI components
-│ │ │ ├── footer # Footer component (footer.component.ts, footer.component.html, footer.component.css)
-│ │ │ ├── header # Header component (header.component.ts, header.component.html, header.component.css)
-│ │ │ ├── menu-item # Menu item component (menu-item.component.ts, menu-item.component.html, menu-item.component.css)
-│ │ │ └── restaurant-card # Restaurant card component (restaurant-card.component.ts, restaurant-card.component.html, restaurant-card.component.css)
-│ │ ├── pages # Pages in the app
-│ │ │ ├── cart # Cart page (cart.component.ts, cart.component.html, cart.component.css)
-│ │ │ ├── favorites # Favorites page (favorites.component.ts, favorites.component.html, favorites.component.css)
-│ │ │ ├── home # Home page (home.component.ts, home.component.html, home.component.css)
-│ │ │ ├── login # Login page (login.component.ts, login.component.html, login.component.css)
-│ │ │ └── order # Order page (order.component.ts, order.component.html, order.component.css)
-│ │ ├── services # Application services for logic and API calls
-│ │ │ ├── auth.guard.ts # Authentication guard for protected routes
-│ │ │ ├── auth.service.ts # Authentication service for login and registration
-│ │ │ ├── cart.service.ts # Service to manage cart items
-│ │ │ └── favorites.service.ts # Service to manage favorites
-│ │ ├── app.component.ts # Root component of the application
-│ │ └── app.routes.ts # Routing configuration for the app
-│ ├── assets # Static assets such as images
-│ │ └── userImage.png # Example user profile image
-│ ├── index.html # Main HTML entry point
-│ ├── main.ts # Main entry point for the Angular application
-│ └── styles.css # Global CSS styles
-├── tailwind.config.js # Tailwind CSS configuration
-├── tsconfig.app.json # TypeScript configuration for Angular app
-├── tsconfig.json # Global TypeScript configuration
-└── tsconfig.spec.json # TypeScript configuration for tests
+│   ├── app
+│   │   ├── components              # Reusable UI components
+│   │   │   ├── footer              # Footer component (footer.component.ts, footer.component.html, footer.component.css)
+│   │   │   ├── header              # Header component (header.component.ts, header.component.html, header.component.css)
+│   │   │   ├── menu-item           # Menu item component (menu-item.component.ts, menu-item.component.html, menu-item.component.css)
+│   │   │   └── restaurant-card     # Restaurant card component (restaurant-card.component.ts, restaurant-card.component.html, restaurant-card.component.css)
+│   │   ├── pages                   # Pages in the app
+│   │   │   ├── cart                # Cart page (cart.component.ts, cart.component.html, cart.component.css)
+│   │   │   ├── favorites           # Favorites page (favorites.component.ts, favorites.component.html, favorites.component.css)
+│   │   │   ├── home                # Home page (home.component.ts, home.component.html, home.component.css)
+│   │   │   ├── login               # Login page (login.component.ts, login.component.html, login.component.css)
+│   │   │   └── order               # Order page (order.component.ts, order.component.html, order.component.css)
+│   │   ├── services                # Application services for logic and API calls
+│   │   │   ├── auth.guard.ts       # Authentication guard for protected routes
+│   │   │   ├── auth.service.ts     # Authentication service for login and registration
+│   │   │   ├── cart.service.ts     # Service to manage cart items
+│   │   │   └── favorites.service.ts # Service to manage favorites
+│   │   ├── app.component.ts        # Root component of the application
+│   │   └── app.routes.ts           # Routing configuration for the app
+│   ├── assets                      # Static assets such as images
+│   │   └── userImage.png           # Example user profile image
+│   ├── index.html                  # Main HTML entry point
+│   ├── main.ts                     # Main entry point for the Angular application
+│   └── styles.css                  # Global CSS styles
+├── tailwind.config.js              # Tailwind CSS configuration
+├── tsconfig.app.json               # TypeScript configuration for Angular app
+├── tsconfig.json                   # Global TypeScript configuration
+└── tsconfig.spec.json              # TypeScript configuration for tests
+```
