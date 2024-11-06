@@ -18,5 +18,5 @@ export const dummyFoodItems = [
     { "id": "T4u5v6w", "name": "Pure Veg", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Pure%20Veg.png" },
     { "id": "X7y8z9a", "name": "Shake", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Shake.png" },
     { "id": "B1c2d3e", "name": "Ice Cream", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Ice%20Cream.png" },
-    { "id": "F4g5h6i", "name": "Idli", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Idli.png" }
+    { "id": "F4g5H6i", "name": "Idli", "imageSrc": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Idli.png" }
 ]

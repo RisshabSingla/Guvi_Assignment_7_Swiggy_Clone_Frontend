@@ -150,7 +150,7 @@ export const dummyRestaurants = [
       rating: 4.1
     },
     {
-      id: "854058",
+      id: "854052",
       name: "Elante SOCIAL",
       imageSrc: `https://picsum.photos/${Math.floor(Math.random() * (400 - 300 + 1)) + 300}`,
       location: "Nexus Elante Mall, Industrial Area Phase 1, Chandigarh",
@@ -170,7 +170,7 @@ export const dummyRestaurants = [
       rating: 4.0
     },
     {
-      id: "853587",
+      id: "853588",
       name: "Sector 7 SOCIAL",
       imageSrc: `https://picsum.photos/${Math.floor(Math.random() * (400 - 300 + 1)) + 300}`,
       location: "Sector 7, Chandigarh",
@@ -180,7 +180,7 @@ export const dummyRestaurants = [
       rating: 4.5
     },
     {
-      id: "41066",
+      id: "41067",
       name: "City Cabana",
       imageSrc: `https://picsum.photos/${Math.floor(Math.random() * (400 - 300 + 1)) + 300}`,
       location: "Hotel City Heart Premium, Sector 17, Chandigarh",
