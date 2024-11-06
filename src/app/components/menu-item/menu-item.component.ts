@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CartService, CartItem } from '../../services/cart.service'; 
+import { FavoritesService, FavoriteItem } from '../../services/favorites.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,7 +12,8 @@ import { CommonModule } from '@angular/common';
   templateUrl: './menu-item.component.html',
   styleUrl: './menu-item.component.css'
 })
-export class MenuItemComponent {
+
+export class MenuItemComponent implements OnInit {
     @Input({required:true}) imageSrc!: string;
     @Input({required:true}) itemName!: string;
     @Input({required: true}) orderPage!: boolean;
@@ -19,11 +21,20 @@ export class MenuItemComponent {
     @Input({required: true}) price!: number;
 
     itemQuantity: number = 1;
+    isFavorite: boolean = false;
 
-    constructor(private router: Router, private cartService: CartService) {}
+    constructor(
+      private router: Router, 
+      private cartService: CartService, 
+      private favoritesService: FavoritesService,
+    ) {}
 
-    navigateToOrder(){
-      if(!this.orderPage){
+    ngOnInit() {
+        this.isFavorite = this.favoritesService.isFavorite(this.id);
+    }
+
+    navigateToOrder() {
+      if (!this.orderPage) {
         this.router.navigate(['/order']);
       }
     }
@@ -41,5 +52,19 @@ export class MenuItemComponent {
         
         this.cartService.addToCart(cartItem);
         console.log(`Added ${this.itemName} to cart with quantity: ${this.itemQuantity} and price: ₹${this.price}`);
+    }
+
+    toggleFavorite(event: Event) {
+        event.stopPropagation();
+
+        const favoriteItem: FavoriteItem = {
+          id: this.id,
+          foodItemName: this.itemName,
+          imageSource: this.imageSrc,
+          price: this.price
+        };
+
+        this.favoritesService.toggleFavorite(favoriteItem);
+        this.isFavorite = !this.isFavorite; // Toggle favorite status
     }
 }
