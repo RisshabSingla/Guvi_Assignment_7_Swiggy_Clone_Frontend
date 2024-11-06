@@ -7,15 +7,16 @@ import { FavoritesComponent } from './pages/favorites/favorites.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { LoginComponent } from './pages/login/login.component';
 import { OrderComponent } from './pages/order/order.component';
+import { AuthGuard } from './services/auth.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'restaurant/:id', component: RestaurantDetailsComponent },
-  { path: 'favorites', component: FavoritesComponent },
-  { path: 'cart', component: CartComponent },
+  { path: 'favorites', component: FavoritesComponent, canActivate:[AuthGuard] },
+  { path: 'cart', component: CartComponent,canActivate:[AuthGuard]  },
   { path: 'login', component: LoginComponent },
-  {path:'order', component: OrderComponent},
+  {path:'order', component: OrderComponent, canActivate:[AuthGuard] },
   { path: '**', redirectTo: '/home' }, 
 ];
 

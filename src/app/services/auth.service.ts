@@ -15,21 +15,26 @@ export class AuthService {
   private users: User[] = [
     { email: 'test@example.com', username: 'testuser', password: 'password123' },
   ];
-  
+
   private currentUserSubject = new BehaviorSubject<User | null>(null);
   public currentUser = this.currentUserSubject.asObservable();
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    const storedUser = localStorage.getItem('currentUser');
+    if (storedUser) {
+      this.currentUserSubject.next(JSON.parse(storedUser));
+    }
+  }
 
   login(email: string, password: string): Observable<any> {
     const user = this.users.find(u => u.email === email && u.password === password);
-    
     if (user) {
       this.currentUserSubject.next(user);
+      localStorage.setItem('currentUser', JSON.stringify(user)); 
       this.router.navigate(['/order']);  
-      return of({ success: true, user }); 
+      return of({ success: true, user });
     } else {
-      return of({ success: false, message: 'Invalid email or password' }); 
+      return of({ success: false, message: 'Invalid email or password' });
     }
   }
 
@@ -37,11 +42,12 @@ export class AuthService {
     const existingUser = this.users.find(u => u.email === email);
     
     if (existingUser) {
-      return of({ success: false, message: 'Email already exists' }); 
+      return of({ success: false, message: 'Email already exists' });
     } else {
       const newUser: User = { email, username, password };
       this.users.push(newUser);
       this.currentUserSubject.next(newUser); 
+      localStorage.setItem('currentUser', JSON.stringify(newUser));
       this.router.navigate(['/order']);  
       return of({ success: true, user: newUser });
     }
@@ -49,14 +55,15 @@ export class AuthService {
 
   logout() {
     this.currentUserSubject.next(null);
-    this.router.navigate(['/login']);
+    localStorage.removeItem('currentUser'); 
+    this.router.navigate(['/login']);  
   }
 
-  isLoggedIn() {
+  isLoggedIn(): boolean {
     return !!this.currentUserSubject.value;
   }
 
-  getCurrentUser() {
+  getCurrentUser(): User | null {
     return this.currentUserSubject.value;
   }
 }
