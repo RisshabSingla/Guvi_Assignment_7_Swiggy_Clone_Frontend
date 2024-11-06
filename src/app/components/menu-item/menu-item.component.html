@@ -6,8 +6,16 @@
       loading="lazy"
     />
   </div>
-  <div class="flex justify-center md:text-xl font-bold truncate">
-    {{ itemName }}
+  <div
+    class="flex justify-between md:text-xl font-bold"
+    [ngClass]="{ 'px-2': orderPage }"
+  >
+    <div [ngClass]="{ 'w-3/4 truncate': orderPage }">
+      {{ itemName }}
+    </div>
+    @if(orderPage){
+    <div [ngClass]="{ 'w-1/4': orderPage }">₹ {{ price }}</div>
+    }
   </div>
   @if(orderPage){
   <div class="flex justify-center gap-4">

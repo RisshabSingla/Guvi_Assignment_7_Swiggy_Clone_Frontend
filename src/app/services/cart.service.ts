@@ -6,6 +6,7 @@ export interface CartItem {
   foodItemName: string;
   imageSource: string;
   quantity: number;
+  price: number;
 }
 
 @Injectable({
@@ -26,6 +27,7 @@ export class CartService {
     }
     this.cartItems.next(currentItems);
   }
+
   removeFromCart(id: string) {
     const currentItems = this.cartItems.value.filter(item => item.id !== id);
     this.cartItems.next(currentItems);
@@ -44,7 +46,17 @@ export class CartService {
       this.cartItems.next(currentItems);
     }
   }
-  
+
+  increaseQuantity(id: string) {
+    const currentItems = this.cartItems.value;
+    const itemIndex = currentItems.findIndex(item => item.id === id);
+
+    if (itemIndex > -1) {
+      currentItems[itemIndex].quantity++;
+      this.cartItems.next(currentItems);
+    }
+  }
+
   getCartItems() {
     return this.cartItems.value;
   }
